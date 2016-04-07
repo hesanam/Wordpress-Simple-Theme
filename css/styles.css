@@ -125,7 +125,7 @@ header ul li.active:hover{
 }
 
 .main-content{
-	width: 66%;
+	width: 70%;
 	float: left;
 	min-height: 700px;
 	height: 100%;
@@ -141,7 +141,7 @@ header ul li.active:hover{
 }
 
 .content-area .sidebar-content{
-	width: 32%;
+	width: 30%;
 	float: right;
 	min-height: 200px;
 	padding-left: 15px;
@@ -176,14 +176,14 @@ footer .footer-widgets h4{
 footer .footer-widgets:last-child{
 	clear: right;
 }
-footer .social img{
+.social img{
 	width: 20px;
 	margin: 0 3px;
 	-webkit-filter: grayscale(100%);
 	-moz-filter: grayscale(100%);
 	filter: grayscale(100%);
 }
-footer .social img:hover{
+.social img:hover{
 	-webkit-filter: none;
 	-moz-filter: none;
 	filter: none;
@@ -215,6 +215,10 @@ article.post{
 	border: 1px solid #EAEAEA;
 	margin: 15px 0;
 	padding: 15px;
+	position: relative;
+}
+article.post .text{
+	min-height: 110px;
 }
 article.post .text h1{
 	font-size: 18px;
@@ -236,6 +240,8 @@ article.post figure{
 	display: inline-block;
 	float: left;
 	position: relative;
+	width: 220px;
+	height: 150px;
 }
 article.post figure figcaption{
 	position: absolute;
@@ -251,9 +257,12 @@ article.post figure figcaption{
     font-size: 14px;
     visibility: hidden;
     opacity: 0;
-    -webkit-transition: all 0.8s cubic-bezier(.10, .70, .10,1);
-    -moz-transition: all 0.8s cubic-bezier(.10, .70, .10,1);
-    transition: all 0.8s cubic-bezier(.10, .70, .10,1);
+    -webkit-transform: scale(.94);
+    -moz-transform: scale(.94);
+    transform: scale(.94);
+    -webkit-transition: all 0.3s cubic-bezier(.10, .70, .10,1);
+    -moz-transition: all 0.3s cubic-bezier(.10, .70, .10,1);
+    transition: all 0.3s cubic-bezier(.10, .70, .10,1);
 }
 article.post figure:hover figcaption{
     visibility: visible;
@@ -262,8 +271,8 @@ article.post figure:hover figcaption{
 article.post figure img{
 	padding: 5px;
 	border: 1px solid #EAEAEA;
-	width: 220px;
-	height: 150px;
+	width: 100%;
+	height: 100%;
 }
 article.post .read-more{
 	float: right;
@@ -293,8 +302,46 @@ article.post .author{
 aside .widget{
 	width: 100%;
 	border: 1px solid #EAEAEA;
-	height: 100px;
 	min-height: 100px;
-	max-height: 250px;
+	max-height: 350px;
 	margin: 15px 0;
+	overflow: hidden;
+	position: relative;
+}
+
+
+aside .widget h4{
+	margin: 10px 10px 15px;
+	display: inline-block;
+	background: white;
+	padding: 0 10px;
+}
+aside .widget ul{
+	padding-left: 50px;
+	margin-top: 0;
+}
+aside .widget ul li{
+	list-style: disc;
+	margin-bottom: 10px;
+}
+aside .widget ul li a{
+	color: black;
+}
+aside .widget ul li a:hover{
+	color: gray;
+}
+aside .widget .social-icons{
+    text-align: center;
+    padding-top: 10px;
+}
+.search-box form{
+	text-align: center;
+}
+.search-box #search-box{
+	outline: none;
+	line-height: 30px;
+}
+.search-box #search-btn{
+	line-height: 12px;
+	padding: 10px;
 }
