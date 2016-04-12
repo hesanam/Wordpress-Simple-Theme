@@ -438,6 +438,7 @@ article.post .author a{
 nav.pagination .nav-links {
     text-align: center;
     line-height: 35px; 
+    margin: 20px 0;
 }
 nav.pagination .nav-links .page-numbers{
     padding: 5px 10px;
@@ -460,6 +461,8 @@ nav.pagination .nav-links span.current:hover{
 
 
 /**********************************/
+
+
 
 
 
@@ -843,4 +846,99 @@ a.return-home:hover{
 	background: black;
     color: white;
     border: 1px solid black;
+}
+
+
+/**********************************/
+
+
+
+
+
+
+
+
+
+
+
+
+
+/**********************************/
+/***********Post Formats**********/
+/********************************/
+
+article.post-status{
+	background: #32BDBF;
+    padding: 5px 20px;
+    box-shadow: 3px 3px 5px #BFBFBF;
+    border-radius: 3px;
+}
+article.post-status p.status-author{
+	color: white;
+    font-size: 13px;
+    margin: 0;
+    margin-top: 10px;
+}
+article.post-status p.content{
+	margin: 10px 0;
+    line-height: 24px;
+}
+
+
+
+
+
+
+article.post-gallery{
+	background: #292929;
+    padding: 10px;
+    margin: 15px 0;
+}
+article.post-gallery img{
+	border: none!important;
+}
+article.post-gallery h2.title{
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin: 0;
+}
+article.post-gallery dd{
+	color: white;
+}
+
+
+
+
+
+
+
+article.post-quote{
+	background: #f9f9f9;
+    border-left: 10px solid #ccc;
+    margin: 15px 0;
+    padding: 1em 20px;
+    quotes: "\201C""\201D""\2018""\2019";
+}
+article.post-quote p.quote{
+	display: inline;
+    line-height: 30px;
+}
+article.post-quote p.quote:before{
+	color: #ccc;
+    content: open-quote;
+    font-size: 6em;
+    line-height: 0.1em;
+    margin-right: 0.15em;
+    vertical-align: -0.5em;
+}
+article.post-quote p.quotes-by{
+    text-align: right;
+    color: #828282;
+    font-style: italic;
+    margin: 0;
+    margin-top: 15px;
+}
+article.post-quote p.quotes-by:before{
+    content: "-- "
 }

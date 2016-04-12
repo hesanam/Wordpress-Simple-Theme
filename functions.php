@@ -30,10 +30,22 @@ function themeSetup(){
 	add_image_size('main-page-thumb', 220 , 150 , true);
 	add_image_size('single-thumb', 626 , 380 , true);
 
-	// register_widget('widget');
+	add_theme_support('post-formats',array('link','aside','gallery','quote','image','status','video','audio','chat','link') );
 }
 
 add_action('after_setup_theme','themeSetup');
+
+function customExcerptLenght() {
+	return 17;
+}
+
+add_filter('excerpt_length','customExcerptLenght' );
+  
+function excerpt_more( $more ) {
+	return '...';
+}
+
+add_filter( 'excerpt_more', 'excerpt_more' );
 
 
 function widgetSupp(){
