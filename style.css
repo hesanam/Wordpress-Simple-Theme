@@ -1,5 +1,5 @@
 /*
-  Theme Name: Theme Tut
+  Theme Name: ThemeTut
   Theme URI: https://github.com/hesanam/Wordpress-Simple-Theme
   Author: Hesan Aminiloo
   Author URI: https://github.com/hesanam/
@@ -868,13 +868,13 @@ a.return-home:hover{
 /********************************/
 
 article.post-status{
-	background: #32BDBF;
+	background: #e0ebff;
     padding: 5px 20px;
     box-shadow: 3px 3px 5px #BFBFBF;
     border-radius: 3px;
 }
 article.post-status p.status-author{
-	color: white;
+	color: #9C9C9C;
     font-size: 13px;
     margin: 0;
     margin-top: 10px;

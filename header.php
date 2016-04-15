@@ -36,7 +36,7 @@
 
 	<!-- Category Menu -->
 	<div class="menu-category">
-		<h4>Caregories</h4>
+		<h4>Categories</h4>
 		<nav>
 			<?php wp_nav_menu($arg2); ?>
 		</nav>

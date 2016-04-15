@@ -101,3 +101,110 @@ function widgetSupp(){
 }
 
 add_action('widgets_init' , 'widgetSupp');
+
+
+function customize_register($wp_customize){
+
+
+	$wp_customize->	add_panel('header_panel',array(
+		'title'		=>	__('Header','ThemeTut'),
+		'priority'	=>	60,
+	));
+	$wp_customize->	add_panel('footer_panel',array(
+		'title'		=>	__('Footer','ThemeTut'),
+		'priority'	=>	90,
+	));
+	
+
+
+
+
+
+	$wp_customize->	add_setting('simple_theme_link_colors',array(
+		'default'	=>	'#fff',
+		'transport'	=>	'refresh',
+	));
+	$wp_customize->	add_setting('simple_theme_button_colors',array(
+		'default'	=>	'#000',
+		'transport'	=>	'refresh',
+	));
+	$wp_customize-> add_setting('simple_theme_menu_bg',array(
+		'default'	=>	'#000',
+		'transport'	=>	'refresh',
+	));
+	$wp_customize-> add_setting('simple_theme_menu_link_color',array(
+		'default'	=>	'#fff',
+		'transport'	=>	'refresh',
+	));
+	$wp_customize-> add_setting('simple_theme_footer_bg',array(
+		'default'	=>	'#000',
+		'transport'	=>	'refresh',
+	));
+
+
+
+
+	$wp_customize-> add_section('header_change_colors',array(
+		'title'		=>	__('Header Color Options','ThemeTut'),
+		'priority'	=>	30,
+		'panel'		=>	'header_panel',
+	));
+	$wp_customize-> add_section('footer_change_colors',array(
+		'title'		=>	__('Footer Color Options','ThemeTut'),
+		'priority'	=>	30,
+		'panel'		=>	'footer_panel',
+	));
+
+
+
+	$wp_customize->	add_control(new WP_Customize_Color_Control($wp_customize,'simple_theme_link_colors',array(
+		'label'		=>	__('Link Colors','ThemeTut'),
+		'section'	=>	'header_change_colors',
+		'settings'	=>	'simple_theme_link_colors',
+	)));
+	$wp_customize->	add_control(new WP_Customize_Color_Control($wp_customize,'simple_theme_button_colors',array(
+		'label'		=>	__('Button Colors','ThemeTut'),
+		'section'	=>	'header_change_colors',
+		'settings'	=>	'simple_theme_button_colors',
+	)));
+	$wp_customize->	add_control(new WP_Customize_Color_Control($wp_customize,'simple_theme_menu_bg',array(
+		'label'		=>	__('Top Menu Background','ThemeTut'),
+		'section'	=>	'header_change_colors',
+		'settings'	=>	'simple_theme_menu_bg',
+	)));
+	$wp_customize->	add_control(new WP_Customize_Color_Control($wp_customize,'simple_theme_menu_link_color',array(
+		'label'		=>	__('Top Menu Link Color','ThemeTut'),
+		'section'	=>	'header_change_colors',
+		'settings'	=>	'simple_theme_menu_link_color',
+	)));
+	$wp_customize->	add_control(new WP_Customize_Color_Control($wp_customize,'simple_theme_footer_bg',array(
+		'label'		=>	__('Footer Background','ThemeTut'),
+		'section'	=>	'footer_change_colors',
+		'settings'	=>	'simple_theme_footer_bg',
+	)));
+}
+add_action('customize_register','customize_register');
+
+
+function customized_css(){ ?>
+	<style type="text/css">
+		header ul li.current-menu-item{
+			background: <?php echo get_theme_mod('simple_theme_button_colors') ;?>;
+			border: 1px solid <?php echo get_theme_mod('simple_theme_button_colors') ;?>;
+		}
+		header ul li.current-menu-item{
+			color: <?php echo  get_theme_mod('simple_theme_link_colors') ;?>;
+		}
+		.menu-category{
+			background: <?php echo get_theme_mod('simple_theme_menu_bg') ;?>
+		}
+		.menu-category nav ul li,
+		.menu-category h4{
+			color:<?php echo get_theme_mod('simple_theme_menu_link_color'); ?>;
+		}
+		footer{
+			background: <?php echo get_theme_mod('simple_theme_footer_bg'); ?>;
+		}
+	</style>
+<?php }
+add_action('wp_head','customized_css');
